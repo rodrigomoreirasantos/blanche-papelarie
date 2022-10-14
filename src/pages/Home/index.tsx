@@ -5,7 +5,7 @@ import "react-slideshow-image/dist/styles.css";
 
 import slideImageBlack from '../../assets/slideImage.svg'
 import slideImageWhite from '../../assets/slideImage-white.svg'
-// import slideImageBrand from '../../assets/brandImageSlider.svg'
+import slideImageBrand from '../../assets/brandImageSlider.svg'
 
 export function Home() {
     const slideImages = [
@@ -15,9 +15,9 @@ export function Home() {
         {
             url: slideImageWhite,
         },
-        // {
-        //     url: slideImageBrand,
-        // },
+        {
+            url: slideImageBrand,
+        },
         
     ]
 
