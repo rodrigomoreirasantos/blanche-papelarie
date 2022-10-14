@@ -2,8 +2,6 @@ import { Heart } from "phosphor-react";
 import { useState } from "react";
 import { BoxContainer, BoxProduct } from "./styled";
 
-import ProductImage from '../../assets/productImage.svg'
-
 interface ProductInfoProps {
     url: string
 }

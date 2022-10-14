@@ -6,7 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 import slideImageBlack from '../../assets/slideImage.svg'
 import slideImageWhite from '../../assets/slideImage-white.svg'
 import roxo from '../../assets/ROXO.jpg'
-import firstOrder from '../../assets/FIRST ORDER.png'
+
 
 
 import agenda from '../../assets/AGENDA.jpeg'
@@ -22,9 +22,6 @@ export function Home() {
         },
         {
             url: roxo,
-        },
-        {
-            url: firstOrder,
         },
         
     ]
