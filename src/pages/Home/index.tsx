@@ -5,7 +5,11 @@ import "react-slideshow-image/dist/styles.css";
 
 import slideImageBlack from '../../assets/slideImage.svg'
 import slideImageWhite from '../../assets/slideImage-white.svg'
-import slideImageBrand from '../../assets/brandImageSlider.png'
+import colorido from '../../assets/COLORIDO.svg'
+
+
+import agenda from '../../assets/AGENDA.jpeg'
+import note from '../../assets/NOTE.jpeg'
 
 export function Home() {
     const slideImages = [
@@ -16,9 +20,18 @@ export function Home() {
             url: slideImageWhite,
         },
         {
-            url: slideImageBrand,
+            url: colorido,
         },
         
+    ]
+
+    const productsInfo = [
+        {
+            url: agenda
+        },
+        {
+            url: note
+        },
     ]
 
 
@@ -34,14 +47,12 @@ export function Home() {
                 </Slide>
             </div>
             <div className="boxItemCotainer">
-                <BoxItem />
-                <BoxItem />
-                <BoxItem />
-                <BoxItem />
-                <BoxItem />
-                <BoxItem />
-                <BoxItem />
-                <BoxItem />
+               
+               {productsInfo.map((product, index) => {
+                return(
+                    <BoxItem url={product.url}/>
+                )
+               })}
             </div>
 
         </HomeContainer>

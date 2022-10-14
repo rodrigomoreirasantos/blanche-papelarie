@@ -4,13 +4,18 @@ import { BoxContainer, BoxProduct } from "./styled";
 
 import ProductImage from '../../assets/productImage.svg'
 
-export function BoxItem() {
+interface ProductInfoProps {
+    url: string
+}
+
+
+export function BoxItem({url}:ProductInfoProps) {
     const [likeIcon, setLikeIcon] = useState(false)
     
     return(
         <BoxContainer>
             <BoxProduct>
-                <img src={ProductImage} alt="" />
+                <img src={url} alt="" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium reiciendis rem sapiente doloremque, minus laborum? Tenetur blanditiis numquam rem aspernatur debitis </p>
                 
                 <div>
