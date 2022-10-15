@@ -9,12 +9,12 @@ import slideImageWhite from '../../assets/slideImage-white.svg'
 import roxo from '../../assets/ROXO.jpg'
 
 
-import twoNoteRaibow from '../../assets/2-CADERNOS.jpeg'
-import sunflower from '../../assets/GIRASSOL.jpeg'
-import noteColours from '../../assets/NOTES-COLOURS.jpeg'
-import kidsNotebook from '../../assets/KIDS.jpeg'
+import essentialNote from '../../assets/ESSENTIALNOTE.jpeg'
+import noteColours from '../../assets/COOLNOTE.jpeg'
+import notePag from '../../assets/NOTEPAG.jpeg'
+import plannerNotebook from '../../assets/PLANNER.jpeg'
 
-import scheduleCollection from '../../assets/AGENDA.jpeg'
+
 import watermelonBanana from '../../assets/MELANCIABANANA.jpeg'
 import noteCollection from '../../assets/NOTE.jpeg'
 
@@ -38,28 +38,28 @@ export function Home() {
     const productsInfo = [
         {
             id: '1',
-            url: twoNoteRaibow,
-            title: 'FINANCIAL PLANNER',
-            price: '25.00'
+            url: plannerNotebook,
+            title: 'PLANNER',
+            price: '10.00'
 
         },
         {
             id: '2',
             url: noteColours,
-            title: 'COLOURS NOTES',
-            price: '21.00'
+            title: 'COLOURS NOTEBOOK',
+            price: '5.00'
         },
         {
             id: '3',
-            url: kidsNotebook,
-            title: 'KIDS NOTEBOOK',
-            price: '18.00'
+            url: notePag,
+            title: 'NOTEPAD',
+            price: '3.00'
         },
         {
             id: '4',
-            url: sunflower,
-            title: 'SUNFLOWER NOTEBOOK',
-            price: '15.00'
+            url: essentialNote,
+            title: 'THE ESSENTIAL NOTE',
+            price: '5.00'
         },
     ]
 
@@ -93,12 +93,14 @@ export function Home() {
             </SliderContainer>
 
             <BoxItemContainer>
-                {productsInfo.map((product, index) => {
+                {productsInfo.map((product) => {
                         return(
                             <BoxItem 
+                                key={product.id}
                                 url={product.url}
                                 title={product.title}
                                 price={product.price}
+                                id={product.id}
                             />
                         )
                })}

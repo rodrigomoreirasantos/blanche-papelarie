@@ -6,14 +6,33 @@ import { Handbag } from 'phosphor-react'
 
 
 interface ProductInfoProps {
-    url: string
+    url?: string
     title: string
-    price: string 
+    price?: string
+    id: string 
 }
 
 
-export function BoxItem({ url, title,price }:ProductInfoProps) {
-    const [likeIcon, setLikeIcon] = useState(false)
+export function BoxItem({ url, title, price, id }:ProductInfoProps) {
+    const likedItem = {
+        id,
+        title: title
+    }
+    
+    const [likedIcon, setLikedIcon] = useState(false)
+    const [itemLikedArray, setItemLikedArray] = useState<ProductInfoProps[]>([likedItem])
+    
+
+    
+    function handleItemLikedSelected(){
+        setLikedIcon(!likedIcon)
+
+        if (!likedIcon){
+
+            setItemLikedArray([...itemLikedArray, likedItem])
+            console.log(itemLikedArray)
+        }
+    }
     
     return(
         <BoxContainer>
@@ -30,9 +49,10 @@ export function BoxItem({ url, title,price }:ProductInfoProps) {
                         <Handbag size={28} />
                     </button>
                     <button
-                        onClick={() => setLikeIcon(!likeIcon)}
+                        id={id}
+                        onClick={handleItemLikedSelected}
                     >
-                        <Heart size={28} weight={likeIcon ? 'fill' : 'regular'}/>
+                        <Heart size={28} weight={likedIcon ? 'fill' : 'regular'}/>
                     </button>
                 </div>
                 
