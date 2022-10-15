@@ -43,12 +43,12 @@ export const Collections = styled.div`
     button {
         width: 100%;
         
-        padding: 1rem;
+        padding: 0.6rem;
 
         background: ${(props) => props.theme['white']};
         
         border-radius: 0px 0px 8px 8px;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;

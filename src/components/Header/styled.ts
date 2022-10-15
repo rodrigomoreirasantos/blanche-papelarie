@@ -3,15 +3,20 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
+    
+    position: sticky;
+    top: 0;
+
+    z-index: 99999;
+    
     padding: 1rem;
+    
     background: ${(props) => props.theme['--gray-300']};
     border-bottom: 1px solid ${(props) => props.theme['--gray-700']};
-
 
     .logo {
         width: 4rem;
         height: 4rem;
-    
     }
 
     form {
@@ -28,7 +33,7 @@ export const HeaderContainer = styled.header`
             cursor: pointer;
             transition: all .3s;
             &:hover{
-                color: ${props => props.theme['--pink-500']};
+                color: ${props => props.theme['--orange-500']};
             }
         }
     }
@@ -46,4 +51,9 @@ export const InputSeachItem = styled.input`
     width: 16rem;
     border: 0;
     border-radius: 16px;
+
+    &:focus{
+        border: 2px solid ${(props) => props.theme['--orange-300']}
+       
+    }
 `
