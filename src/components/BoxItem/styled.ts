@@ -2,37 +2,58 @@ import styled from "styled-components";
 
 
 export const BoxContainer = styled.div`
-    padding: 2rem;
+    padding: 1.7rem;
     
-`
+    `
 
 export const BoxProduct = styled.div`
-    width: 20rem;
-    height: 28rem;
+    width: 16rem;
+    height: 21.375rem;
+    /* padding: 1rem 1.5rem; */
     
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     
-    background: ${props => props.theme['--pink-500']};
+    
+    background: ${props => props.theme['--orange-300']};
     border-radius: 8px;
     
+    
+    margin: 0 auto;
+    overflow: hidden;
+
+        
+
     img {
-        width: 13rem;
+        width: 13em;
         height: 13rem;
+
         border-radius: 8px;
+
+
+        /* transition: all 0.5s ease; */
+    
+        &:hover{
+            /* transform: scale(1.1); */
+        }
+
     }
 
     p {
         width: 13rem;
+
+        font-size: 1rem;
+        font-weight: 500;
     }
     
     div {
         width: 13rem;
         display: flex;
         flex-direction: row-reverse;
+        justify-content: space-between;
         gap: 1rem;
 
         button{
@@ -40,16 +61,16 @@ export const BoxProduct = styled.div`
             border: none;
             cursor: pointer;
 
-            &:first-child{
-                padding: 0.3rem 2rem;
-                flex: 1;
-                background: ${(props) => props.theme['--gray-300']};
-                color: ${(props) => props.theme['black']};
+            display: flex;
+            align-items: center;
 
-                border-radius: 8px;
+            &:first-child{
+                color: ${(props) => props.theme['--gray-300']};
+
+                transition: all 0.3s;
 
                 &:hover {
-                    background: ${(props) => props.theme['--orange-700']};
+                    color: ${(props) => props.theme['--orange-700']};
                 }
             }   
             

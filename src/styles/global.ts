@@ -19,8 +19,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body, input-security, textarea, button {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'DM Sans', sans-serif;
         font-weight: 400;
         font-size: 1rem;
+    }
+
+    button {
+        background: transparent;
+        border: none;
     }
 `
