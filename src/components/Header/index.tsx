@@ -8,6 +8,7 @@ import { AccountCircle } from '@mui/icons-material'
 import { User, ShoppingCart, Heart, Headlights  } from 'phosphor-react'
 import logoBlanchePapelarie from '../../assets/blache-logo.svg'
 import  userImage from '../../assets/userImage.svg'
+import '../../assets/logo-project.jpg'
 
 export function Header() {
     return(
