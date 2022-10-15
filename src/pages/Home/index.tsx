@@ -46,7 +46,7 @@ export function Home() {
         {
             id: '2',
             url: noteColours,
-            title: 'CLOURS NOTEBOOKE',
+            title: 'COLOURS NOTES',
             price: '21.00'
         },
         {
