@@ -22,7 +22,7 @@ export function Home() {
     const slideImages = [
         {
             id: '1',
-            url: slideImage
+            url: slideImage,
         },
         {
             id: '2',
@@ -40,22 +40,26 @@ export function Home() {
             id: '1',
             url: twoNoteRaibow,
             title: 'FINANCIAL PLANNER',
+            price: '25.00'
 
         },
         {
             id: '2',
             url: noteColours,
-            title: 'CLOURS NOTEBOOKE'
+            title: 'CLOURS NOTEBOOKE',
+            price: '21.00'
         },
         {
             id: '3',
             url: kidsNotebook,
-            title: 'KIDS NOTEBOOK'
+            title: 'KIDS NOTEBOOK',
+            price: '18.00'
         },
         {
             id: '4',
             url: sunflower,
             title: 'SUNFLOWER NOTEBOOK',
+            price: '15.00'
         },
     ]
 
@@ -94,6 +98,7 @@ export function Home() {
                             <BoxItem 
                                 url={product.url}
                                 title={product.title}
+                                price={product.price}
                             />
                         )
                })}

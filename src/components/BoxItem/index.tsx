@@ -7,11 +7,12 @@ import { Handbag } from 'phosphor-react'
 
 interface ProductInfoProps {
     url: string
-    title: string | undefined
+    title: string
+    price: string 
 }
 
 
-export function BoxItem({ url, title }:ProductInfoProps) {
+export function BoxItem({ url, title,price }:ProductInfoProps) {
     const [likeIcon, setLikeIcon] = useState(false)
     
     return(
@@ -19,8 +20,10 @@ export function BoxItem({ url, title }:ProductInfoProps) {
             <BoxProduct>
 
                 <img src={url} alt="" />
-                <p>{title}</p>
-
+                <div className="description">
+                    <p>{title}</p>
+                    <p>$ {price}</p>
+                </div>
                 
                 <div>
                     <button className="buyItem">

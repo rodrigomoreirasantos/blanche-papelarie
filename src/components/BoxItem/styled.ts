@@ -8,7 +8,7 @@ export const BoxContainer = styled.div`
 
 export const BoxProduct = styled.div`
     width: 16rem;
-    height: 21.375rem;
+    height: 23rem;
     /* padding: 1rem 1.5rem; */
     
     display: flex;
@@ -42,11 +42,20 @@ export const BoxProduct = styled.div`
 
     }
 
-    p {
-        width: 13rem;
+    .description {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+        p {
+            width: 13rem;
+            
+            font-size: 1rem;
+            font-weight: 500;
 
-        font-size: 1rem;
-        font-weight: 500;
+            &:last-child {
+                font-weight: 400;
+            }
+        }
     }
     
     div {
