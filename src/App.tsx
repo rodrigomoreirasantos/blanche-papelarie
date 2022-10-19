@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import { ItemLikedContextProvider } from './contexts/ItemsLikedContext'
 import { Router } from './Router'
 
 import { GlobalStyle } from './styles/global'
@@ -9,7 +10,9 @@ export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <ItemLikedContextProvider>
+          <Router />
+        </ItemLikedContextProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>

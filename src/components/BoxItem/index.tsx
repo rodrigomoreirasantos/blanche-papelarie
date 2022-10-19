@@ -1,37 +1,33 @@
 import { Heart } from "phosphor-react";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { BoxContainer, BoxProduct } from "./styled";
 
 import { Handbag } from 'phosphor-react'
+import { ItemsLikedContext } from "../../contexts/ItemsLikedContext";
 
 
-interface ProductInfoProps {
+interface ProductInfoProps  {
     url?: string
-    title: string
-    price?: string
-    id: string 
+    title?: string 
+    price?: string 
+    id?: string
 }
 
 
 export function BoxItem({ url, title, price, id }:ProductInfoProps) {
-    const likedItem = {
+    
+    const likedItem: ProductInfoProps = {
         id,
         title: title
     }
-    
+    const { itemsLikedSelected } = useContext(ItemsLikedContext)
     const [likedIcon, setLikedIcon] = useState(false)
-    const [itemLikedArray, setItemLikedArray] = useState<ProductInfoProps[]>([likedItem])
-    
-
+    const [itemLikedSelected, setItemLikedSelected] = useState<ProductInfoProps>(likedItem)
     
     function handleItemLikedSelected(){
         setLikedIcon(!likedIcon)
-
-        if (!likedIcon){
-
-            setItemLikedArray([...itemLikedArray, likedItem])
-            console.log(itemLikedArray)
-        }
+        setItemLikedSelected(likedItem)
+        itemsLikedSelected(itemLikedSelected)
     }
     
     return(

@@ -6,7 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 
 import slideImage from '../../assets/slideImage.svg'
 import slideImageWhite from '../../assets/slideImage-white.svg'
-import roxo from '../../assets/ROXO.jpg'
+import freeShiping from '../../assets/FREESHIPPING.png'
 
 
 import essentialNote from '../../assets/ESSENTIALNOTE.jpeg'
@@ -30,7 +30,7 @@ export function Home() {
         },
         {
             id: '3',
-            url: roxo,
+            url: freeShiping,
         },
         
     ]

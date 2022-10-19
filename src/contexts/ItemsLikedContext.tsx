@@ -1,13 +1,37 @@
-import { createContext, ReactNode } from 'react'
+import { createContext, ReactNode, useState } from 'react'
 
-export const ItemsLikedContext = createContext({})
+interface ItemsLikedProps {
+    url?: string
+    title?: string 
+    price?: string
+    id?: string
+}
+
+interface ItemsLikedContextType {
+    itemLiked: ItemsLikedProps[]
+    itemsLikedSelected: (dataProduct: ItemsLikedProps) => void
+}
+
+
+export const ItemsLikedContext = createContext({} as ItemsLikedContextType)
 
 interface ItemLikedContextProviderProps {
     children: ReactNode
   }
 
 export function ItemLikedContextProvider({children}: ItemLikedContextProviderProps){
+
+    const [itemLiked, setItemLiked] = useState<ItemsLikedProps[]>([])
+
+    function itemsLikedSelected(dataProduct: ItemsLikedProps){
+        
+        setItemLiked([dataProduct])
+    }
+
+
     return(
-        <h1></h1>
+        <ItemsLikedContext.Provider value={{itemsLikedSelected, itemLiked}}>
+            {children}
+        </ItemsLikedContext.Provider>
     )
 }
