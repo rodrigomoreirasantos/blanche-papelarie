@@ -16,16 +16,19 @@ export function Header() {
     const { itemLiked } = useContext(ItemsLikedContext)
     const [itemLikedArray, setItemLikedArray] = useState<any[]>([])
     const [itemLikeIcon, setItemLikedIcon] = useState<any[]>([])
-    
     useEffect(() => {
-        itemLiked.map((item) => {
-            setItemLikedArray((state) => [...state, item.id])
-            const itemId: any = item.id
+        itemLiked.map((item) => {            
+            if(!itemLikeIcon.includes(item.id)) {
+                setItemLikedIcon((state) => [...state, item.id])
+            } else {
+                const index = itemLikeIcon.indexOf(item.id)
+                if (index > -1) {
+                    itemLikeIcon.splice(index, 1)
+                    setItemLikedArray(itemLikedArray.splice(index,1))
+                }
 
-            if(itemLikedArray.includes(item.id)) {
-                // itemLikedArray.splice(itemId)
-                console.log(itemLikeIcon)
             }
+            
 
         })
     },[itemLiked])
@@ -48,10 +51,11 @@ export function Header() {
             <div className="buttonsActions">
                 <button>
                     <Heart size={24} />
-                    <p>
-                        
-                        
-                    </p>
+                    <span>
+                        <p>
+                            {itemLikeIcon.length}
+                        </p>
+                    </span>
                 </button>
                     
                 <button>

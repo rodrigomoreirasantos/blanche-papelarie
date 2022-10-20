@@ -35,6 +35,32 @@ export const HeaderContainer = styled.header`
             &:hover{
                 color: ${props => props.theme['--orange-500']};
             }
+
+            position: relative;
+
+            span {
+                position: absolute;
+                top: -1px;
+                right: -6px;
+                
+                width: 1rem;
+                height: 1rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 0.8rem;
+                font-weight: bold;
+                
+
+                background: ${(props) => props.theme['--red-500']};
+                color: ${(props) => props.theme['white']};
+
+                border-radius: 999999px;
+
+
+            }
         }
     }
 
